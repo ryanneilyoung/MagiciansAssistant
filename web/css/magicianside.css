@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+.table-hover td{
+	cursor: pointer;
+}
+
+fieldset{
+	position: absolute;
+	border:none;
+	float: right;
+	width: 500px;
+	margin: 0px auto;
+	text-align: right;
+	align: right;
+	content-align: right;
+}
+
+label{
+	display:inline-block;
+	width: 200px;
+	margin-right:30px;
+	text-align:left;
+}
+
+input:disabled{
+	opacity: .2;
+}
