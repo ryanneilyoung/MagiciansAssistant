@@ -29,6 +29,30 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1.171_1" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 4.1.1.171_1" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 4.1.1.171_1 - RESTful Web Service" level="application_server_libraries" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/gson-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/poi-ooxml-3.5-FINAL.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="gson-1.1" level="project" />
+    <orderEntry type="library" name="poi-3.15" level="project" />
+    <orderEntry type="library" name="gson-2.8.0" level="project" />
+    <orderEntry type="library" name="poi-ooxml-3.15" level="project" />
+    <orderEntry type="library" name="javax.mail_1.4.0.v201005080615" level="project" />
   </component>
 </module>

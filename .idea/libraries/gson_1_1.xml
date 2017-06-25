@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="gson-1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/gson-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/poi-ooxml-3.5-FINAL.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/gson-1.1.jar!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/poi-ooxml-3.5-FINAL.jar!/" recursive="false" />
+  </library>
+</component>

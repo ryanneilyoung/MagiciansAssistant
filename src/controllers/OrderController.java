@@ -7,11 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
 import persistence.RelationBroker;
 import persistence.utilities.InventoryBroker;
 import persistence.utilities.OrderBroker;
@@ -95,7 +90,6 @@ public class OrderController
 		{
 			//String to = broker.getOrderEmail(orderId);
 			//String filename = generateInvoice(orderId);
-			generateInvoice(orderId);
 			//MagicianController.sendInvoice(to, "Your order has been Places", filename);
 			return true;
 		}
@@ -189,36 +183,6 @@ public class OrderController
 		}
 		
 		return store;
-	}	
-	
-	/**
-	 * @param object
-	 */
-	private static String generateInvoice(int id)
-	{
-		String jrxmlFileName = "C:/res/jasper/OrderInvoice.jrxml";
-		String jasperFileName = "C:/res/jasper/OrderInvoice.jasper";
-		String pdfFileName = "C:/res/pdfs/OrderInvoice" + id +".pdf";
-		
-		try
-		{
-			JasperCompileManager.compileReportToFile(jrxmlFileName, jasperFileName);
-			
-			Connection conn = RelationBroker.getBroker().getConnection();
-			
-			HashMap<String, Object> hm = new HashMap<>();
-			hm.put("OrderId", id);
-			JasperPrint jprint = JasperFillManager.fillReport(jasperFileName, hm, conn);
-			
-			JasperExportManager.exportReportToPdfFile(jprint, pdfFileName);
-			conn.close();
-			return pdfFileName;
-		}
-		catch(JRException|SQLException|NumberFormatException e)
-		{
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 }

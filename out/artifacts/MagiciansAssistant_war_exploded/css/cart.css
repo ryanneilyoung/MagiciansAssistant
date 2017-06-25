@@ -1,0 +1,27 @@
+/* CSS used here will be applied after bootstrap.css *//* CSS used here will be applied after bootstrap.css */
+
+.product-list {
+    margin-top: 25px;
+}
+
+ .product-list .product {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 300px;
+}
+  .product-list .product .product-info {
+    min-height: 220px;
+}
+.product-info button
+{
+  border:0;
+  background:none;
+}
+.product-row
+{
+  border-bottom:2px dashed #DEDEDE;padding-bottom:10px;
+  padding-top:10px;
+}

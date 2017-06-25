@@ -27,11 +27,6 @@ import javax.mail.internet.*;
 import exceptions.IllegalDescriptionException;
 import exceptions.IllegalNameException;
 import exceptions.IllegalNumberSizeException;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
 
 /**
  * @author Ryan Young 000698795
@@ -100,8 +95,7 @@ public class MagicianController
 			
 			if(!(boolean) booking[8])
 			{
-				//String filename = generateInvoice((int) booking[0]);
-				generateInvoice((int) booking[0]);
+				//String filename = generateInvoice((int) booking[0])
 				/*
 				String email = booking[9].toString();
 				try
@@ -183,36 +177,6 @@ public class MagicianController
 		transport.connect("smtp.gmail.com", "ifoolu.test@gmail.com", "capstone");
 		transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
 		transport.close();
-	}
-	 */
-	/**
-	 * @param object
-	 */
-	private static String generateInvoice(int id)
-	{
-		String jrxmlFileName = "C:/res/jasper/BookingInvoice.jrxml";
-		String jasperFileName = "C:/res/jasper/BookingInvoice.jasper";
-		String pdfFileName = "C:/res/pdfs/BookingInvoice" + id +".pdf";
-		
-		try
-		{
-			JasperCompileManager.compileReportToFile(jrxmlFileName, jasperFileName);
-			
-			Connection conn = RelationBroker.getBroker().getConnection();
-			
-			HashMap<String, Object> hm = new HashMap<>();
-			hm.put("BookingId", id);
-			JasperPrint jprint = JasperFillManager.fillReport(jasperFileName, hm, conn);
-			
-			JasperExportManager.exportReportToPdfFile(jprint, pdfFileName);
-			conn.close();
-			return pdfFileName;
-		}
-		catch(JRException|SQLException|NumberFormatException e)
-		{
-			e.printStackTrace();
-			return null;
-		}
 	}
 	
 	/**
@@ -628,7 +592,6 @@ public class MagicianController
 	/**
 	 * @param id
 	 * @param password
-	 * @param password2 
 	 * @throws SQLException 
 	 */
 	public void saveMagicianPassword(int id, String currentPassword, String password) throws SQLException

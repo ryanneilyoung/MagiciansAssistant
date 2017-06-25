@@ -120,7 +120,7 @@ public class SaleTrick implements Serializable
 	
 	public static void validatePrice(double price) throws IllegalNumberSizeException
 	{
-		if(price <=0 )
+		if(price <= 0 )
 		{
 			throw new IllegalNumberSizeException();
 		}
