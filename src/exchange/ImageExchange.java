@@ -30,7 +30,7 @@ public class ImageExchange extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String filename = request.getPathInfo().substring(1);
-		File file = new File("C:\\res\\images\\", filename);
+		File file = new File("D:\\res\\images\\", filename);
         response.setHeader("Content-Type", getServletContext().getMimeType(filename));
         response.setHeader("Content-Length", String.valueOf(file.length()));
         response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
